@@ -26,6 +26,7 @@
 <!--Hero Section-->
 <section id="Home" class="p-3 mb-2 bg-2">
   <div class="container text-center">
+    <h1 id="greeting"></h1>
     <h1>Welcome to LMS Platform</h1>
     <p>Your gateway to knowledge and success.Explore a wide variety of courses and resources.</p>
     <button class="btn-solid theme-primary" type="button" data-bs-toggle="menu" aria-expanded="false">
@@ -101,5 +102,21 @@
     </p>
   </div>
 </footer>
+
+<script>
+  const currentTime = new Date();
+  const currentHour = currentTime.getHours();
+  let greeting;
+
+  if(currentHour < 12) {
+    greeting = "Good Morning!";
+  } else if (currentHour < 18) {
+    greeting = "Good Afternoon!";
+  } else {
+    greeting = "Good Evening!";
+  }
+
+  document.getElementById("greeting").innerText = greeting;
+</script>
 </body>
 </html>
